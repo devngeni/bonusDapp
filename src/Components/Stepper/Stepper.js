@@ -124,7 +124,11 @@ export default function CreateBulkSend() {
       )
       enqueueSnackbar(`Approval sent 💵....waitig for metamask confirmation`)
 
-      const txReceipt = await provider.waitForTransaction(aprroveTx.hash, 1)
+      const txReceipt = await provider.waitForTransaction(
+        aprroveTx.hash,
+        1,
+        12000,
+      )
 
       if (txReceipt.status) {
         displayAlert('success', `Approval successful`)

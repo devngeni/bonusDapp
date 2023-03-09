@@ -2,21 +2,19 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom';
 import HistoryTable from './Components/Table/Table';
 import Home from './pages/Home';
-import { chain, configureChains, createClient, WagmiConfig } from "wagmi";
-import { alchemyProvider } from "wagmi/providers/alchemy";
-import { publicProvider } from "wagmi/providers/public";
+import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { getDefaultWallets, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import "@rainbow-me/rainbowkit/styles.css";
 import { SnackbarProvider } from "notistack";
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
-import { config } from 'dotenv';
+
 
 
 const bscChain = {
   id: 97,
   name: 'Binance Smart Chain',
   network: 'bsc',
-  iconUrl: 'https://icons8.com/icon/63192/bitcoin',
+  iconUrl: 'https://icons8.com/icon/74XminJ8M1Qo/binance',
   iconBackground: '#fff',
   nativeCurrency: {
     decimals: 18,
@@ -24,13 +22,13 @@ const bscChain = {
     symbol: 'WBNB',
   },
   rpcUrls: {
-    default: 'https://bsc-dataseed4.binance.org/',
+    default: 'https://data-seed-prebsc-2-s3.binance.org:8545/',
   },
   blockExplorers: {
     default: { name: 'BscScan', url: 'https://www.bscscan.com/' },
     bsc: { name: 'BscScan', url: 'https://www.bscscan.com/' },
   },
-  testnet: false,
+  testnet: true
 };
 
 const { provider, chains } = configureChains(

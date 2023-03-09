@@ -14,11 +14,11 @@ export class Helpers {
   /**
    *
    * @param _tokenAddress the token address to get the allowance for
-   * @returnse5962e3f7fd6
+   * @returns
    */
   approveContract = async (tokenAddress, signer) => {
     return new Contract(
-      tokenAddress,
+      tokenAddrapproveContractess,
       [
         'function approve(address _spender, uint256 _value) public returns (bool success)',
       ],
@@ -36,8 +36,10 @@ export class Helpers {
     console.log('ABI', BULK_SEND_ABI)
 
     return new Contract(
-      '0x871422643E116C364Db4f0Bc0dEB5202a624D2E9',
-      BULK_SEND_ABI,
+      '0xc260e2Ade4CE2AB277cB192C7Ac49BECf3f5D9AA',
+      [
+        'function batchTransfer(address _tokenAddress, address[] memory _to, uint256[] memory _value) payable',
+      ],
       this.signer,
     )
   }

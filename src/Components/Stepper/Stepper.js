@@ -60,6 +60,8 @@ export default function CreateBulkSend() {
   //context
   const { recipients } = useContext(GlobalContext)
 
+  console.log('recipients', recipients)
+
   //notification
   const { enqueueSnackbar, closeSnackbar } = useSnackbar()
 
@@ -115,10 +117,8 @@ export default function CreateBulkSend() {
       const sum = (_sum * 1e18).toString()
       console.log('Here is the sum', sum)
 
-      let tokenAddress = '0x5C46eC0Dd2AF140c24A194D1A091953dec44F05c'
-
       const aprroveTx = await HelpersWrapper.actualApproval(
-        tokenAddress,
+        config.TOKEN_TRANSFER,
         sum,
         signer,
       )
@@ -150,9 +150,8 @@ export default function CreateBulkSend() {
       }))
 
       const contract2 = new Contract(
-        config.TOKEN_TRANSFER,
+        '0xc260e2Ade4CE2AB277cB192C7Ac49BECf3f5D9AA',
         BULK_SEND_ABI,
-        // console.log('Here is the data', addr)
         signer,
       )
 
@@ -168,7 +167,7 @@ export default function CreateBulkSend() {
       }
 
       const sendTx = await contract2.batchTransfer(
-        '0x210f4F7a092CCdc3487B8dAB8e317A6E29aeA720',
+        config.TOKEN_TRANSFER,
         addresses,
         amounts,
         {

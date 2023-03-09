@@ -57,7 +57,7 @@ function About() {
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
 
                 <div className='tokenaddress'>
-                    <h6 >Token Address:  0x5C49...19505c </h6>
+                    <h6 >Token Address:  0x21d5...fF6845</h6>
 
                 </div>
 

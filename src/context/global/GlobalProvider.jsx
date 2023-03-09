@@ -74,13 +74,13 @@ export const GlobalProvider = ({
 
       console.log("transferData", data.result)
 
-      for (let i = 0; i < data.length; i++) {
+      for (let i = 0; i < data.result.length; i++) {
 
-        const { transaction_hash, address, to_address } = data[i]
+        const { transaction_hash, address, to_address } = data.result[i]
 
         tokenTransfers.push({ transaction_hash, address, to_address })
 
-        setTransfer(data.result)
+        setTransfer(tokenTransfers)
 
 
       }
